@@ -1,16 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:task_3packages_ex_app/HomeScreen.dart';
+import 'package:task_3packages_ex_app/TabPkgAudioPlayers.dart';
+import 'package:task_3packages_ex_app/TabPkgCarousel.dart';
+import 'package:task_3packages_ex_app/TabPkgSpinkit.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyWhatsappApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+class MyWhatsappApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: "packages", home: HomeScreen());
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text("Packages"),
+            bottom: TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.square), text: "Spinkit"),
+                Tab(icon: Icon(Icons.image), text: 'Carousel_Slider'),
+                Tab(icon: Icon(Icons.audio_file_outlined), text: 'Audio'),
+              ],
+            ),
+          ),
+          body: TabBarView(
+            children: [
+              // Chats Tab
+              TabPkgSpinkit(),
+              TabPkgCarousel(),
+              TabPkgAudioPlayers()
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

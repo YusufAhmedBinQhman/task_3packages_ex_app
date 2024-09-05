@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class TabPkgAudioPlayers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Icon(Icons.abc);
+    // Audio Players tab
   }
 }
+////

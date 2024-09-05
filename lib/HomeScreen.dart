@@ -1,72 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:task_3packages_ex_app/TabPkgAudioPlayers.dart';
+import 'package:task_3packages_ex_app/TabPkgCarousel.dart';
+import 'package:task_3packages_ex_app/TabPkgSpinkit.dart';
 
-class HomeScreen extends StatelessWidget {
+void main() {
+  runApp(MyWhatsappApp());
+}
+
+class MyWhatsappApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: DefaultTabController(
-        length: 2,
+        length: 3,
         child: Scaffold(
           appBar: AppBar(
-            title: Text('My Whatsapp'),
+            title: Text("Packages"),
             bottom: TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.chat), text: 'Chats'),
-                Tab(icon: Icon(Icons.people), text: 'Contacts'),
+                Tab(icon: Icon(Icons.square), text: "Spinkit"),
+                Tab(icon: Icon(Icons.image), text: 'Carousel_Slider'),
+                Tab(icon: Icon(Icons.audio_file_outlined), text: 'Audio'),
               ],
             ),
           ),
           body: TabBarView(
             children: [
               // Chats Tab
-              ListView(
-                children: [
-                  ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.blue,
-                      child: Icon(Icons.person),
-                    ),
-                    title: Text('John Doe'),
-                    subtitle: Text('Hello there'),
-                    trailing: Text('10:30 AM'),
-                  ),
-                  ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.green,
-                      child: Icon(Icons.person),
-                    ),
-                    title: Text('Jane Smith'),
-                    subtitle: Text('How are you?'),
-                    trailing: Text('Yesterday'),
-                  ),
-                ],
-              ),
-              // Contacts Tab
-              ListView(
-                children: [
-                  ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.orange,
-                      child: Icon(Icons.person),
-                    ),
-                    title: Text('Alice Johnson'),
-                    subtitle: Text('Hey!'),
-                  ),
-                  ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.purple,
-                      child: Icon(Icons.person),
-                    ),
-                    title: Text('Bob Brown'),
-                    subtitle: Text('Whats up?'),
-                  ),
-                ],
-              ),
+              TabPkgSpinkit(),
+              TabPkgCarousel(),
+              TabPkgAudioPlayers()
             ],
           ),
         ),
       ),
     );
-    ////
   }
 }
