@@ -29,7 +29,7 @@ class MyWhatsappApp extends StatelessWidget {
               // Chats Tab
               TabPkgSpinkit(),
               TabPkgCarousel(),
-              TabPkgAudioPlayers()
+              // TabPkgAudioPlayers()
             ],
           ),
         ),
